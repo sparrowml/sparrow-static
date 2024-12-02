@@ -84,6 +84,17 @@ def create_static_site(domain: str) -> None:
             },
             "Comment": "",
             "CallerReference": str(time.time()),
+            "CustomErrorResponses": {
+                "Quantity": 1,
+                "Items": [
+                    {
+                        "ErrorCode": 403,
+                        "ResponsePagePath": "/index.html",
+                        "ResponseCode": "200",
+                        "ErrorCachingMinTTL": 10,
+                    },
+                ],
+            },
             "PriceClass": "PriceClass_100",
             "WebACLId": "",
             "Enabled": True,
